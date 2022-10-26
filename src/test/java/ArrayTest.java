@@ -1,5 +1,5 @@
-import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -11,7 +11,7 @@ class ArrayTest {
         assertEquals(2, Array.return2());
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     @DisplayName("returns 2")
     void testReturn2() {
         assertEquals(2, Array.return2());
