@@ -91,6 +91,17 @@ class ArrayTest {
         });
     }
 
+    @Test
+    @DisplayName("Removed item should be returned")
+    void returnRemovedItem() {
+        underTest.items[0] = 1;
+        underTest.items[1] = 2;
+        underTest.items[2] = 3;
+        underTest.items[3] = 4;
+        int removedItem = underTest.removeAt(3);
+        assertEquals(4, removedItem);
+    }
+
     // Testing print method
     @Test
     @DisplayName("Prints an empty array")
