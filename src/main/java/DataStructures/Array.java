@@ -12,4 +12,16 @@ public class Array {
     public void insert(int item) {
 
     }
+
+    public int removeAt(int index) {
+        return -1; // replace
+    }
+
+    public String print() {
+        return "Todo";
+    }
+
+    public int indexOf(int item) {
+        return -1;
+    }
 }

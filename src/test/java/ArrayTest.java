@@ -61,6 +61,9 @@ class ArrayTest {
         assertEquals(1, underTest.items[0]);
         assertEquals(2, underTest.items[1]);
         assertEquals(3, underTest.items[2]);
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+            int x = underTest.items[3];
+        });
     }
 
     @Test
@@ -134,6 +137,16 @@ class ArrayTest {
         underTest.insert(2);
         underTest.insert(3);
         underTest.insert(4);
+        assertEquals(1, underTest.indexOf(2));
+    }
+
+    @Test
+    @DisplayName("Provides first index if item appears multiple times")
+    void firstIndexMultipleAppearances() {
+        underTest.insert(1);
+        underTest.insert(2);
+        underTest.insert(2);
+        underTest.insert(2);
         assertEquals(1, underTest.indexOf(2));
     }
 

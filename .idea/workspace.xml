@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="973bbf9e-294c-44f4-8b54-1979d81e16d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DataStructures/Array.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataStructures/Array.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ArrayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ArrayTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataStructures/Array.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataStructures/Array.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +63,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ArrayTest.insertMultipleIntegers">
+  <component name="RunManager" selected="JUnit.ArrayTest.firstIndexMultipleAppearances">
     <configuration name="Array$Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DataStructures.Array$Main" />
       <module name="dataStructuresAndAlgorithms" />
@@ -92,11 +93,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArrayTest.insertChar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArrayTest.firstIndexMultipleAppearances" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dataStructuresAndAlgorithms" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ArrayTest" />
-      <option name="METHOD_NAME" value="insertChar" />
+      <option name="METHOD_NAME" value="firstIndexMultipleAppearances" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -114,11 +115,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ArrayTest.insertMultipleIntegers" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Array$Main" />
-        <item itemvalue="JUnit.ArrayTest.insertChar" />
+        <item itemvalue="JUnit.ArrayTest.firstIndexMultipleAppearances" />
         <item itemvalue="JUnit.ArrayTest" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ArrayTest.insertMultipleIntegers" />
+        <item itemvalue="Application.Array$Main" />
       </list>
     </recent_temporary>
   </component>
