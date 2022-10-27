@@ -221,6 +221,35 @@ class ArrayTest {
         assertEquals(-1, underTest.indexOf(10));
     }
 
+    // testing max method
+    @Test
+    @DisplayName("Returns the maximum number in the array")
+    void returnsMaxItem() {
+        underTest.insert(1);
+        underTest.insert(5);
+        underTest.insert(2);
+        underTest.insert(2);
+        assertEquals(5, underTest.max());
+    }
+
+    @Test
+    @DisplayName("Returns the maximum number in the array if max appears multiple times")
+    void returnsMaxItemWhenMultiple() {
+        underTest.insert(1);
+        underTest.insert(5);
+        underTest.insert(5);
+        underTest.insert(2);
+        assertEquals(5, underTest.max());
+    }
+
+    @Test
+    @DisplayName("Raises Exception when array is empty")
+    void maxWhenArrayIsEmpty() {
+        assertThrows(Exception.class, () -> {
+            underTest.max();
+        });
+    }
+
 
 
 
