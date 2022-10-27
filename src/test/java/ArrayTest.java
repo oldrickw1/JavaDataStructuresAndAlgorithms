@@ -224,7 +224,7 @@ class ArrayTest {
     // testing max method
     @Test
     @DisplayName("Returns the maximum number in the array")
-    void returnsMaxItem() {
+    void returnsMaxItem() throws Exception {
         underTest.insert(1);
         underTest.insert(5);
         underTest.insert(2);
@@ -234,7 +234,7 @@ class ArrayTest {
 
     @Test
     @DisplayName("Returns the maximum number in the array if max appears multiple times")
-    void returnsMaxItemWhenMultiple() {
+    void returnsMaxItemWhenMultiple() throws Exception {
         underTest.insert(1);
         underTest.insert(5);
         underTest.insert(5);
