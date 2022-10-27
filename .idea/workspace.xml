@@ -8,7 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DataStructures/Array.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataStructures/Array.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ArrayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ArrayTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataStructures/Array.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataStructures/Array.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ArrayTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ArrayTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,31 +79,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArrayTest.firstIndexMultipleAppearances" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArrayTest.emptyArgumentArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dataStructuresAndAlgorithms" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ArrayTest" />
-      <option name="METHOD_NAME" value="firstIndexMultipleAppearances" />
+      <option name="METHOD_NAME" value="emptyArgumentArray" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArrayTest.insertMultipleIntegers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArrayTest.emptyOriginalArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dataStructuresAndAlgorithms" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ArrayTest" />
-      <option name="METHOD_NAME" value="insertMultipleIntegers" />
+      <option name="METHOD_NAME" value="emptyOriginalArray" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArrayTest.returnRemovedItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArrayTest.fullIntersection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dataStructuresAndAlgorithms" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ArrayTest" />
-      <option name="METHOD_NAME" value="returnRemovedItem" />
+      <option name="METHOD_NAME" value="fullIntersection" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -111,10 +112,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ArrayTest" />
+        <item itemvalue="JUnit.ArrayTest.emptyOriginalArray" />
+        <item itemvalue="JUnit.ArrayTest.emptyArgumentArray" />
+        <item itemvalue="JUnit.ArrayTest.fullIntersection" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.ArrayTest.returnRemovedItem" />
-        <item itemvalue="JUnit.ArrayTest.firstIndexMultipleAppearances" />
-        <item itemvalue="JUnit.ArrayTest.insertMultipleIntegers" />
       </list>
     </recent_temporary>
   </component>

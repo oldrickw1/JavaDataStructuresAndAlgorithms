@@ -19,11 +19,11 @@ public class Array {
     }
 
     private void doubleMemoAllocation() {
-        int[] newItems = new int[allocatedLength * 2];
+        int[] newItems = new int[(allocatedLength == 0) ? 2 : allocatedLength * 2];
         for (int i = 0; i < count; i++)
             newItems[i] = items[i];
         items = newItems;
-        allocatedLength *= 2;
+        allocatedLength = allocatedLength == 0 ? 2 : allocatedLength * 2 ;
     }
 
     public int removeAt(int index) {
@@ -63,8 +63,12 @@ public class Array {
         return max;
     }
 
-    public int[] intersection(int[] arr) {
-        int[] x = {-1};
-        return x;
+    public Array intersection(int[] arr) {
+        var intersectArray = new Array(0);
+        for (int i = 0; i < arr.length; i++) {
+            if (this.indexOf(arr[i]) != -1)
+                intersectArray.insert(arr[i]);
+        }
+        return intersectArray;
     }
 }

@@ -3,6 +3,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ArrayTest {
@@ -254,16 +256,20 @@ class ArrayTest {
     @Test
     @DisplayName("Returns empty array if the original array is empty")
     void emptyOriginalArray() {
-        int[] newArr = {1, 2, 3};
+        int[] argArr = {1, 2, 3};
         int[] reference = {};
-        assertEquals(reference, underTest.intersection(newArr));    }
+        var returnArr = underTest.intersection(argArr);
+        assertEquals("[]", returnArr.print());
+    }
 
     @Test
     @DisplayName("Returns empty array if the argument array is empty")
     void emptyArgumentArray() {
-        int[] newArr = {};
+        int[] argArr = {};
         int[] reference = {1, 2, 3};
-        assertEquals(reference, underTest.intersection(newArr));    }
+        var returnArr = underTest.intersection(argArr);
+        assertEquals("[]", returnArr.print());
+    }
 
     @Test
     @DisplayName("Returns valid array intersection")
@@ -271,9 +277,10 @@ class ArrayTest {
         underTest.insert(2);
         underTest.insert(3);
         underTest.insert(8);
-        int[] newArr = {1, 2, 3, 4, 5};
-        int[] reference = {2, 3};
-        assertEquals(reference, underTest.intersection(newArr));    }
+        int[] argArr = {1, 2, 3, 4, 5};
+        var returnArr = underTest.intersection(argArr);
+        assertEquals("[2, 3]", returnArr.print());
+    }
 
     @Test
     @DisplayName("Returns empty array if no intersection")
@@ -281,9 +288,9 @@ class ArrayTest {
         underTest.insert(2);
         underTest.insert(3);
         underTest.insert(8);
-        int[] newArr = {1, 4, 9};
-        int[] reference = {};
-        assertEquals(reference, underTest.intersection(newArr));
+        int[] argArr = {1, 4, 9};
+        var returnArr = underTest.intersection(argArr);
+        assertEquals("[]", returnArr.print());
     }
 
     @Test
@@ -292,9 +299,9 @@ class ArrayTest {
         underTest.insert(2);
         underTest.insert(3);
         underTest.insert(8);
-        int[] newArr = {2, 3, 8};
-        int[] reference = {2, 3, 8};
-        assertEquals(reference, underTest.intersection(newArr));
+        int[] argArr = {2, 3, 8};
+        Array returnArr = underTest.intersection(argArr);
+        assertEquals("[2, 3, 8]", returnArr.print());
     }
 
 
