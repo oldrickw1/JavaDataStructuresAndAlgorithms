@@ -250,7 +250,52 @@ class ArrayTest {
         });
     }
 
+    // Testing intersect method
+    @Test
+    @DisplayName("Returns empty array if the original array is empty")
+    void emptyOriginalArray() {
+        int[] newArr = {1, 2, 3};
+        int[] reference = {};
+        assertEquals(reference, underTest.intersection(newArr));    }
 
+    @Test
+    @DisplayName("Returns empty array if the argument array is empty")
+    void emptyArgumentArray() {
+        int[] newArr = {};
+        int[] reference = {1, 2, 3};
+        assertEquals(reference, underTest.intersection(newArr));    }
+
+    @Test
+    @DisplayName("Returns valid array intersection")
+    void validArrayIntersection() {
+        underTest.insert(2);
+        underTest.insert(3);
+        underTest.insert(8);
+        int[] newArr = {1, 2, 3, 4, 5};
+        int[] reference = {2, 3};
+        assertEquals(reference, underTest.intersection(newArr));    }
+
+    @Test
+    @DisplayName("Returns empty array if no intersection")
+    void noIntersection() {
+        underTest.insert(2);
+        underTest.insert(3);
+        underTest.insert(8);
+        int[] newArr = {1, 4, 9};
+        int[] reference = {};
+        assertEquals(reference, underTest.intersection(newArr));
+    }
+
+    @Test
+    @DisplayName("Returns same array if full intersection")
+    void fullIntersection() {
+        underTest.insert(2);
+        underTest.insert(3);
+        underTest.insert(8);
+        int[] newArr = {2, 3, 8};
+        int[] reference = {2, 3, 8};
+        assertEquals(reference, underTest.intersection(newArr));
+    }
 
 
 

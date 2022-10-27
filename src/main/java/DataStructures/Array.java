@@ -62,4 +62,9 @@ public class Array {
         }
         return max;
     }
+
+    public int[] intersection(int[] arr) {
+        int[] x = {-1};
+        return x;
+    }
 }
