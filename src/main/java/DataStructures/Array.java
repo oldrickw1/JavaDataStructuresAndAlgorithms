@@ -12,7 +12,16 @@ public class Array {
     }
 
     public void insert(int item) {
-
+        if (count == allocatedLength) {
+            int[] newItems = new int[allocatedLength * 2];
+            for (int i = 0; i < count; i++)
+                newItems[i] = items[i];
+            newItems[count++] = item;
+            items = newItems;
+            allocatedLength *= 2;
+            return;
+        }
+        items[count++] = item;
     }
 
     public int removeAt(int index) {
@@ -28,7 +37,16 @@ public class Array {
     }
 
     public String print() {
-        return "Todo";
+        String strRepr = "";
+        strRepr += "[";
+        if (count == 0)
+            return strRepr + "]";
+        for (int i = 0; i < count; i++)
+            strRepr += items[i] + ", ";
+        strRepr = strRepr.substring(0, strRepr.length() - 2);
+        strRepr += "]";
+
+        return strRepr;
     }
 
     public int indexOf(int item) {

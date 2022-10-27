@@ -1,5 +1,4 @@
 import DataStructures.Array;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -33,6 +32,50 @@ class ArrayTest {
         assertEquals(1, underTest.items[0]);
         assertEquals(2, underTest.items[1]);
         assertEquals(3, underTest.items[2]);
+    }
+
+    @Test
+    @DisplayName("Array grows if more items inserted than originally allocated for")
+    void insertingMoreThanOriginallyAllocated() {
+        underTest.insert(1);
+        underTest.insert(2);
+        underTest.insert(3);
+        underTest.insert(4);
+        underTest.insert(5);
+        underTest.insert(6);
+        assertEquals(1, underTest.items[0]);
+        assertEquals(2, underTest.items[1]);
+        assertEquals(3, underTest.items[2]);
+        assertEquals(4, underTest.items[3]);
+        assertEquals(5, underTest.items[4]);
+        assertEquals(6, underTest.items[5]);
+    }
+
+    @Test
+    @DisplayName("Array keeps resizing")
+    void arrayKeepsResizing() {
+        underTest.insert(1);
+        underTest.insert(2);
+        underTest.insert(3);
+        underTest.insert(4);
+        underTest.insert(5);
+        underTest.insert(6);
+        underTest.insert(7);
+        underTest.insert(8);
+        underTest.insert(9);
+        underTest.insert(10);
+        underTest.insert(11);
+        assertEquals(1, underTest.items[0]);
+        assertEquals(2, underTest.items[1]);
+        assertEquals(3, underTest.items[2]);
+        assertEquals(4, underTest.items[3]);
+        assertEquals(5, underTest.items[4]);
+        assertEquals(6, underTest.items[5]);
+        assertEquals(7, underTest.items[6]);
+        assertEquals(8, underTest.items[7]);
+        assertEquals(9, underTest.items[8]);
+        assertEquals(10, underTest.items[9]);
+        assertEquals(11, underTest.items[10]);
     }
 
 
