@@ -10,32 +10,132 @@ class ArrayTest {
 
     // SetUp
     private Array underTest;
+
     @BeforeEach
     void setUp() {
-        underTest = new Array();
+        underTest = new Array(5);
     }
 
     // Testing insert method
     @Test
-    @DisplayName("Insert method test. Inserting 10")
+    @DisplayName("Inserting 10")
     void insert10() {
         underTest.insert(10);
         assertEquals(10, underTest.items[0]);
     }
 
     @Test
-    @DisplayName("Insert method test. Rejecting char")
-    void insertChar() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            underTest.insert('c');
+    @DisplayName("Inserting multiple integers")
+    void insertMultipleIntegers() {
+        underTest.insert(1);
+        underTest.insert(2);
+        underTest.insert(3);
+        assertEquals(1, underTest.items[0]);
+        assertEquals(2, underTest.items[1]);
+        assertEquals(3, underTest.items[2]);
+    }
+
+
+    // Testing removeAt method
+    @Test
+    @DisplayName("First item gets removed")
+    void removeFirstItem() {
+        underTest.items[0] = 1;
+        underTest.items[1] = 2;
+        underTest.items[2] = 3;
+        underTest.items[3] = 4;
+        underTest.removeAt(0);
+        assertEquals(2, underTest.items[0]);
+        assertEquals(3, underTest.items[1]);
+        assertEquals(4, underTest.items[2]);
+    }
+
+    @Test
+    @DisplayName("Last item gets removed")
+    void removeLastItem() {
+        underTest.items[0] = 1;
+        underTest.items[1] = 2;
+        underTest.items[2] = 3;
+        underTest.items[3] = 4;
+        underTest.removeAt(3);
+        assertEquals(1, underTest.items[0]);
+        assertEquals(2, underTest.items[1]);
+        assertEquals(3, underTest.items[2]);
+    }
+
+    @Test
+    @DisplayName("Item somewhere in the middle gets removed")
+    void removeMiddleItem() {
+        underTest.items[0] = 1;
+        underTest.items[1] = 2;
+        underTest.items[2] = 3;
+        underTest.items[3] = 4;
+        underTest.removeAt(2);
+        assertEquals(1, underTest.items[0]);
+        assertEquals(2, underTest.items[1]);
+        assertEquals(4, underTest.items[2]);
+    }
+
+    @Test
+    @DisplayName("Trying to remove an index out of bound raises an exception")
+    void removeItemOutOfBound() {
+        underTest.items[0] = 1;
+        underTest.items[1] = 2;
+        underTest.items[2] = 3;
+        underTest.items[3] = 4;
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+            underTest.removeAt(5);
         });
     }
 
-    // Testing removeAt method
-
     // Testing print method
+    @Test
+    @DisplayName("Prints an empty array")
+    void printsEmptyArray() {
+        assertEquals("[]", underTest.print());
+    }
+
+    @Test
+    @DisplayName("Prints an array")
+    void printsAnArray() {
+        underTest.insert(1);
+        underTest.insert(2);
+        underTest.insert(3);
+        underTest.insert(4);
+        assertEquals("[1, 2, 3, 4]", underTest.print());
+    }
+
 
     // Testing indexOf method
+    @Test
+    @DisplayName("Provides index of item that is in the array at the first index")
+    void itemExistsAtFirstIndex() {
+        underTest.insert(1);
+        underTest.insert(2);
+        underTest.insert(3);
+        underTest.insert(4);
+        assertEquals(0, underTest.indexOf(1));
+    }
+
+    @Test
+    @DisplayName("Provides index of item that is in the array at the last index")
+    void itemExistAtTheLastIndex() {
+        underTest.insert(1);
+        underTest.insert(2);
+        underTest.insert(3);
+        underTest.insert(4);
+        assertEquals(3, underTest.indexOf(4));
+    }
+
+    @Test
+    @DisplayName("Provides index of item that is in the array at a middle index")
+    void itemExistAtAMiddleIndex() {
+        underTest.insert(1);
+        underTest.insert(2);
+        underTest.insert(3);
+        underTest.insert(4);
+        assertEquals(1, underTest.indexOf(2));
+    }
 
 
 }
