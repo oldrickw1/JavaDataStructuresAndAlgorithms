@@ -8,8 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DataStructures/Array.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataStructures/Array.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ArrayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DataStructures/Array.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataStructures/Array.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ArrayTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ArrayTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ArrayTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

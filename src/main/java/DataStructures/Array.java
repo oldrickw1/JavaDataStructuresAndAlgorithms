@@ -71,4 +71,8 @@ public class Array {
         }
         return intersectArray;
     }
+
+    public void reverse() {
+
+    }
 }

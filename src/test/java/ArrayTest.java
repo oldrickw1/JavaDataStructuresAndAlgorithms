@@ -304,7 +304,23 @@ class ArrayTest {
         assertEquals("[2, 3, 8]", returnArr.print());
     }
 
+    // Testing reverse method
+    @Test
+    @DisplayName("Reverses array of size 3")
+    void reverseArrayOf3() {
+        underTest.insert(1);
+        underTest.insert(2);
+        underTest.insert(3);
+        underTest.reverse();
+        assertEquals(1, underTest.items[0]);
+        assertEquals(2, underTest.items[1]);
+        assertEquals(3, underTest.items[2]);
+    }
 
-
-
+    @Test
+    @DisplayName("Reverses empty array")
+    void reverseEmptyArray() {
+        underTest.reverse();
+        assertEquals("[]", underTest.print());
+    }
 }
