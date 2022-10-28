@@ -312,9 +312,9 @@ class ArrayTest {
         underTest.insert(2);
         underTest.insert(3);
         underTest.reverse();
-        assertEquals(1, underTest.items[0]);
+        assertEquals(3, underTest.items[0]);
         assertEquals(2, underTest.items[1]);
-        assertEquals(3, underTest.items[2]);
+        assertEquals(1, underTest.items[2]);
     }
 
     @Test

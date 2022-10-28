@@ -73,6 +73,9 @@ public class Array {
     }
 
     public void reverse() {
-
+        var newItems = new int[count];
+        for (int i = 0; i < count; i++)
+            newItems[count - i - 1] = items[i];
+        items = newItems;
     }
 }
