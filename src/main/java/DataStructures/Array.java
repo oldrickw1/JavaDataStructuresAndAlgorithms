@@ -78,4 +78,8 @@ public class Array {
             newItems[count - i - 1] = items[i];
         items = newItems;
     }
+
+    public void insertAt(int item, int index) {
+
+    }
 }

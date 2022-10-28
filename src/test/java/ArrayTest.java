@@ -323,4 +323,67 @@ class ArrayTest {
         underTest.reverse();
         assertEquals("[]", underTest.print());
     }
+
+    // Testing insertAt method
+    @Test
+    @DisplayName("Inserts item in array of size 3 at index 1")
+    void insertItemAtIndex1InArrayOf3() {
+        underTest.insert(1);
+        underTest.insert(3);
+        underTest.insert(4);
+        underTest.insertAt(2, 1);
+        assertEquals(1, underTest.items[0]);
+        assertEquals(2, underTest.items[1]);
+        assertEquals(3, underTest.items[2]);
+        assertEquals(4, underTest.items[3]);
+    }
+
+    @Test
+    @DisplayName("Inserts item in array of size 3 at index 0")
+    void insertItemAtIndex0InArrayOf3() {
+        underTest.insert(2);
+        underTest.insert(3);
+        underTest.insert(4);
+        underTest.insertAt(1, 0);
+        assertEquals(1, underTest.items[0]);
+        assertEquals(2, underTest.items[1]);
+        assertEquals(3, underTest.items[2]);
+        assertEquals(4, underTest.items[3]);
+    }
+
+    @Test
+    @DisplayName("Inserts item in array of size 3 at last index")
+    void insertItemAtIndex2InArrayOf3() {
+        underTest.insert(1);
+        underTest.insert(2);
+        underTest.insert(3);
+        underTest.insertAt(4, 3);
+        assertEquals(1, underTest.items[0]);
+        assertEquals(2, underTest.items[1]);
+        assertEquals(3, underTest.items[2]);
+        assertEquals(4, underTest.items[3]);
+    }
+
+    @Test
+    @DisplayName("Inserting item in negative index raises exception")
+    void insertItemAtNegativeIndex() {
+        underTest.insert(2);
+        underTest.insert(3);
+        underTest.insert(4);
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+            underTest.insertAt(1, -1);
+        });
+    }
+
+    @Test
+    @DisplayName("Inserting item at out of bound index raises exception")
+    void insertItemAtInvalidIndex() {
+        underTest.insert(2);
+        underTest.insert(3);
+        underTest.insert(4);
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+            underTest.insertAt(1, 10);
+        });
+    }
+
 }
