@@ -79,7 +79,13 @@ public class Array {
         items = newItems;
     }
 
-    public void insertAt(int item, int index) {
-
+    public void insertAt(int item, int index) throws IndexOutOfBoundsException {
+        if (index < 0 || index >= count)
+            throw new IndexOutOfBoundsException();
+        if (count >= allocatedLength)
+            doubleMemoAllocation();
+        for (int i = count - 1; i >= index; i--)
+            items[i + 1] = items[i];
+        items[index] = item;
     }
 }
