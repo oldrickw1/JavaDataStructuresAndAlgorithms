@@ -1,6 +1,9 @@
+import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.printf(args[0]);
+        var myList = new LinkedList<>();
+        myList.addFirst(5);
+        System.out.println(myList.get(5));
     }
 }
