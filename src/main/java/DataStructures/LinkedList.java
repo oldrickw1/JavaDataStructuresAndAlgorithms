@@ -36,6 +36,7 @@ public class LinkedList {
             pointer = pointer.next;
         }
         return -1;
+        //
     }
 
     public String print() {
