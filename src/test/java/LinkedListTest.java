@@ -38,6 +38,25 @@ public class LinkedListTest {
         assertEquals(7, underTest.get(0));
     }
 
+    // Testing get method
+    @Test
+    @DisplayName("Returns the right value at the 'index' of the linked list")
+    void getValues() {
+        underTest.addFirst(1);
+        underTest.addFirst(2);
+        underTest.addFirst(3);
+        assertEquals(3, underTest.get(0));
+        assertEquals(2, underTest.get(1));
+        assertEquals(1, underTest.get(2));
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+            underTest.get(4);
+        });
+    }
+
+//    // Testing getSize method
+//    @Test
+//    @DisplayName()
+
     // Testing addLast method
     // Testing deleteFirst method
     // Testing deleteLast method
