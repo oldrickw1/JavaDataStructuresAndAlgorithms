@@ -17,6 +17,28 @@ public class LinkedListTest {
         underTest = new LinkedList();
     }
 
+    // Testing print
+    @Test
+    @DisplayName("Prints an empty Linked List")
+    void printsEmptyLinkedList() {
+        assertEquals("[]", underTest.print());
+    }
+
+    @Test
+    @DisplayName("Prints a Linked List with 1 item")
+    void printsLinkedListWithOneItem() {
+        underTest.addFirst(1);
+        assertEquals("[1]", underTest.print());
+    }
+
+    @Test
+    @DisplayName("Prints a Linked List with 3 item")
+    void printsLinkedListWithThreeItem() {
+        underTest.addFirst(1);
+        underTest.addFirst(2);
+        underTest.addFirst(3);
+        assertEquals("[3,2,1]", underTest.print());
+    }
 
     // Testing addFirst
     @Test
@@ -131,6 +153,37 @@ public class LinkedListTest {
     }
 
     // Testing deleteLast method
+    @Test
+    @DisplayName("Removing first item from an empty Linked List")
+    void removeLastItemFromEmptyLinkedList() {
+        assertThrows(NoSuchElementException.class, () -> {
+            underTest.deleteLast();
+        });
+    }
+
+    @Test
+    @DisplayName("Removing first item from Linked List with items")
+    void removeLastItemFromLinkedListWithItems() {
+        underTest.addFirst(3);
+        underTest.addFirst(2);
+        underTest.addFirst(1);
+        int removedItem = underTest.deleteLast();
+        assertEquals(3, removedItem);
+        assertEquals(1, underTest.get(0));
+        assertEquals(2, underTest.get(1));
+        assertEquals(2, underTest.getSize());
+        assertEquals("[1,2]", underTest.print());
+    }
+
+    @Test
+    @DisplayName("Removing first item from Linked List with just 1 item")
+    void removeLastItemFromLinkedListWithOneItem() {
+        underTest.addFirst(1);
+        int removedItem = underTest.deleteLast();
+        assertEquals(1, removedItem);
+        assertEquals(0, underTest.getSize());
+        assertEquals("[]", underTest.print());
+    }
     // Testing contains method
     // Testing indexOf method
 }

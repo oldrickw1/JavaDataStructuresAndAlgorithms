@@ -1,5 +1,7 @@
 package DataStructures;
 
+import java.util.NoSuchElementException;
+
 public class LinkedList {
 
     private int size = 0;
@@ -38,9 +40,11 @@ public class LinkedList {
 
     public String print() {
         String strRep = "[";
+        if (first == null)
+            return strRep + "]";
         var pointer = first;
         if (pointer.next == null)
-            return strRep += pointer.value + "]";
+            return strRep + pointer.value + "]";
         while (pointer.next != null) {
             strRep += pointer.value + ",";
             pointer = pointer.next;
@@ -66,8 +70,18 @@ public class LinkedList {
     }
 
     public int deleteFirst() {
-        return -1;
+        if (first == null)
+            throw new NoSuchElementException("LinkedList is empty");
+        int removedItem = first.value;
+        if (first.next == null)
+            first = last = null;
+        else
+            first = first.next;
+        size--;
+        return removedItem;
     }
 
-
+    public int deleteLast() {
+        return -1;
+    }
 }
