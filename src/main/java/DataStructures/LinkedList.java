@@ -13,7 +13,6 @@ public class LinkedList {
     public void addFirst(int value) {
         var newNode = new Node();
         newNode.value = value;
-        newNode.next = null;
 
         if (first == null)
             first = last = newNode;
@@ -35,7 +34,6 @@ public class LinkedList {
             pointer = pointer.next;
         }
         return -1;
-        //
     }
 
     public String print() {
@@ -47,13 +45,29 @@ public class LinkedList {
             strRep += pointer.value + ",";
             pointer = pointer.next;
         }
-        return strRep += pointer.value + "]";
+        return strRep + (pointer.value + "]");
     }
 
     public int getSize() {
         return size;
     }
 
+    public void addLast(int value) {
+        var node = new Node();
+        node.value = value;
+
+        if (first == null) {
+            first = last = node;
+        } else {
+            last.next = node;
+            last = node;
+        }
+        size++;
+    }
+
+    public int deleteFirst() {
+        return -1;
+    }
 
 
 }

@@ -2,7 +2,8 @@ import DataStructures.LinkedList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Test;
+
+import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -65,7 +66,7 @@ public class LinkedListTest {
 
     // Testing addLast method
     @Test
-    @DisplayName("Adding a last node to an empty list")
+    @DisplayName("Adding a last item to an empty list")
     void addLastToEmptyLinkedList() {
         underTest.addLast(4);
         assertEquals(1, underTest.getSize());
@@ -73,6 +74,8 @@ public class LinkedListTest {
         assertEquals(4, underTest.get(0));
     }
 
+    @Test
+    @DisplayName("Adding a last item to a list")
     void addLastToLinkedList() {
         underTest.addFirst(4);
         underTest.addLast(5);
@@ -82,6 +85,8 @@ public class LinkedListTest {
         assertEquals(5, underTest.get(1));
     }
 
+    @Test
+    @DisplayName("Adding multiple last items to an empty list")
     void addMultipleLastItems() {
         underTest.addLast(3);
         underTest.addLast(5);
@@ -92,9 +97,38 @@ public class LinkedListTest {
         assertEquals(3, underTest.getSize());
     }
 
-
-
     // Testing deleteFirst method
+    @Test
+    @DisplayName("Removing first item from an empty Linked List")
+    void removeFirstItemFromEmptyLinkedList() {
+        assertThrows(NoSuchElementException.class, () -> {
+            underTest.deleteFirst();
+        });
+    }
+
+    @Test
+    @DisplayName("Removing first item from Linked List with items")
+    void removeFirstItemFromLinkedListWithItems() {
+        underTest.addFirst(3);
+        underTest.addFirst(2);
+        underTest.addFirst(1);
+        int removedItem = underTest.deleteFirst();
+        assertEquals(1, removedItem);
+        assertEquals(2, underTest.get(0));
+        assertEquals(3, underTest.get(1));
+        assertEquals(2, underTest.getSize());
+        assertEquals("[2,3]", underTest.print());
+    }
+
+    @Test
+    @DisplayName("Removing first item from Linked List with just 1 item")
+    void removeFirstItemFromLinkedListWithOneItem() {
+        underTest.addFirst(1);
+        int removedItem = underTest.deleteFirst();
+        assertEquals(1, removedItem);
+        assertEquals(0, underTest.getSize());
+        assertEquals("[]", underTest.print());
+    }
 
     // Testing deleteLast method
     // Testing contains method
