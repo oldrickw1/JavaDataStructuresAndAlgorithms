@@ -221,5 +221,38 @@ public class LinkedListTest {
         assertEquals(true, underTest.contains(3));
         assertEquals(true, underTest.contains(1));
     }
+
     // Testing indexOf method
+    @Test
+    @DisplayName("Returns -1 if indexOf is used on empty Linked List")
+    void indexOfEmptyLinkedList() {
+        assertEquals(-1,underTest.indexOf(4));
+    }
+
+    @Test
+    @DisplayName("Returns -1 if indexOf is used on Linked List that doesn't contain elem")
+    void indexOfLinkedListThatDoesNotContainElem() {
+        underTest.addFirst(1);
+        underTest.addFirst(2);
+        underTest.addFirst(3);
+        assertEquals(-1,underTest.indexOf(4));
+    }
+
+    @Test
+    @DisplayName("Returns index when indexOf is used on Linked List that does contain elem")
+    void indexOfLinkedListThatDoesContainElem() {
+        underTest.addFirst(1);
+        underTest.addFirst(2);
+        underTest.addFirst(3);
+        assertEquals(1,underTest.indexOf(3));
+    }
+
+    @Test
+    @DisplayName("Returns first index when indexOf is used on Linked List that does contain elem multiple times")
+    void firstIndexOfLinkedListThatDoesContainElemMultipleTimes() {
+        underTest.addFirst(1);
+        underTest.addFirst(2);
+        underTest.addFirst(3);
+        assertEquals(1,underTest.indexOf(3));
+    }
 }
