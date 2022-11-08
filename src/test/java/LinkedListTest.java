@@ -185,6 +185,41 @@ public class LinkedListTest {
         assertEquals("[]", underTest.print());
     }
     // Testing contains method
+    @Test
+    @DisplayName("Returns false if used on empty Linked List")
+    void checkIfEmptyLinkedListContains4() {
+        assertEquals(false, underTest.contains(4));
+    }
 
+    @Test
+    @DisplayName("Check if Linked List with one item contains item")
+    void checkIfLinkedListWithOneItemContains() {
+        underTest.addFirst(4);
+        assertEquals(true, underTest.contains(4));
+        assertEquals(false, underTest.contains(6));
+    }
+
+    @Test
+    @DisplayName("Check if Linked List with multiple elements contains item")
+    void checkIfLinkedListWithMultElemsContains() {
+        underTest.addFirst(3);
+        underTest.addFirst(2);
+        underTest.addFirst(1);
+        assertEquals(false, underTest.contains(4));
+        assertEquals(true, underTest.contains(1));
+        assertEquals(true, underTest.contains(2));
+        assertEquals(true, underTest.contains(3));
+    }
+
+    @Test
+    @DisplayName("Check if Linked List with multiple same elements contains item")
+    void checkIfLinkedListWithMultSameElemsContains() {
+        underTest.addFirst(3);
+        underTest.addFirst(3);
+        underTest.addFirst(1);
+        assertEquals(false, underTest.contains(4));
+        assertEquals(true, underTest.contains(3));
+        assertEquals(true, underTest.contains(1));
+    }
     // Testing indexOf method
 }

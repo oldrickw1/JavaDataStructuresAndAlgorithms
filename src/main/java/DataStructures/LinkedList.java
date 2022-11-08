@@ -102,4 +102,18 @@ public class LinkedList {
             tmp = tmp.next;
         }
     }
+
+    public boolean contains(int item) {
+        if (first != null) {
+            Node tmp = first;
+            while (tmp.next != null) {
+                if (tmp.value == item)
+                    return true;
+                tmp = tmp.next;
+            }
+            if (tmp.value == item)
+                return true;
+        }
+        return false;
+    }
 }
