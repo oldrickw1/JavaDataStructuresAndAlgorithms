@@ -82,6 +82,24 @@ public class LinkedList {
     }
 
     public int deleteLast() {
-        return -1;
+        if (last == null)
+            throw new NoSuchElementException("LinkedList isEmpty");
+
+        int removedItem = last.value;
+        size--;
+
+        if (first.next == null) {
+            first = last = null;
+            return removedItem;
+        }
+        Node tmp = first;
+        while (true) {
+            if (tmp.next.next == null) {
+                last = tmp;
+                last.next = null;
+                return removedItem;
+            }
+            tmp = tmp.next;
+        }
     }
 }

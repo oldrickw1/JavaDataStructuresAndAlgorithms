@@ -185,5 +185,6 @@ public class LinkedListTest {
         assertEquals("[]", underTest.print());
     }
     // Testing contains method
+
     // Testing indexOf method
 }
