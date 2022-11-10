@@ -116,4 +116,21 @@ public class LinkedList {
         }
         return false;
     }
+
+    public int indexOf(int item) {
+        int count = 0;
+        if (first != null) {
+            Node tmp = first;
+            while (tmp.next != null) {
+                if (tmp.value == item)
+                    return count;
+                count++;
+                tmp = tmp.next;
+            }
+            if (tmp.value == item)
+                return count;
+        }
+
+        return -1;
+    }
 }

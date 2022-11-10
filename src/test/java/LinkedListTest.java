@@ -241,10 +241,8 @@ public class LinkedListTest {
     @Test
     @DisplayName("Returns index when indexOf is used on Linked List that does contain elem")
     void indexOfLinkedListThatDoesContainElem() {
-        underTest.addFirst(1);
-        underTest.addFirst(2);
         underTest.addFirst(3);
-        assertEquals(1,underTest.indexOf(3));
+        assertEquals(0,underTest.indexOf(3));
     }
 
     @Test
@@ -253,6 +251,6 @@ public class LinkedListTest {
         underTest.addFirst(1);
         underTest.addFirst(2);
         underTest.addFirst(3);
-        assertEquals(1,underTest.indexOf(3));
+        assertEquals(0,underTest.indexOf(3));
     }
 }
