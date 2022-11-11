@@ -21,8 +21,7 @@ public class LinkedList {
 
         if (isEmpty()) {
             first = last = newNode;
-        }
-        else {
+        } else {
             newNode.next = first;
             first = newNode;
         }
@@ -34,8 +33,7 @@ public class LinkedList {
 
         if (isEmpty()) {
             first = last = node;
-        }
-        else {
+        } else {
             last.next = node;
             last = node;
         }
@@ -64,17 +62,16 @@ public class LinkedList {
             throw new NoSuchElementException("LinkedList is empty");
         }
         int removedItem = first.value;
-        size--;
 
         if (listHasOneItem()) {
             clearList();
-            return removedItem;
+        } else {
+            var second = first.next;
+            first.next = null;
+            first = second;
         }
 
-        var second = first.next;
-        first.next = null;
-        first = second;
-
+        size--;
         return removedItem;
     }
 
@@ -83,15 +80,16 @@ public class LinkedList {
             throw new NoSuchElementException("LinkedList isEmpty");
         }
         int removedItem = last.value;
-        size--;
 
         if (listHasOneItem()) {
             clearList();
-            return removedItem;
+        } else {
+            var previous = getPrevious(last);
+            last = previous;
+            previous.next = null;
         }
-        var previous = getPrevious(last);
-        last = previous;
-        previous.next = null;
+
+        size--;
         return removedItem;
     }
 
