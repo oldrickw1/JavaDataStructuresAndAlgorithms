@@ -10,14 +10,18 @@ public class LinkedList {
     private class Node {
         private int value;
         private Node next;
+
+        public Node(int value) {
+            this.value = value;
+        }
     }
 
     public void addFirst(int value) {
-        var newNode = new Node();
-        newNode.value = value;
+        var newNode = new Node(value);
 
-        if (first == null)
+        if (isEmpty()) {
             first = last = newNode;
+        }
         else {
             newNode.next = first;
             first = newNode;
@@ -25,9 +29,96 @@ public class LinkedList {
         size++;
     }
 
+    public void addLast(int value) {
+        var node = new Node(value);
+
+        if (isEmpty()) {
+            first = last = node;
+        }
+        else {
+            last.next = node;
+            last = node;
+        }
+        size++;
+    }
+
+    public int indexOf(int item) {
+        int index = 0;
+        var current = first;
+        while (current != null) {
+            if (current.value == item) {
+                return index;
+            }
+            current = current.next;
+            index++;
+        }
+        return -1;
+    }
+
+    public boolean contains(int item) {
+        return indexOf(item) != -1;
+    }
+
+    public int deleteFirst() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("LinkedList is empty");
+        }
+        int removedItem = first.value;
+        size--;
+
+        if (listHasOneItem()) {
+            clearList();
+            return removedItem;
+        }
+
+        var second = first.next;
+        first.next = null;
+        first = second;
+
+        return removedItem;
+    }
+
+    public int deleteLast() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("LinkedList isEmpty");
+        }
+        int removedItem = last.value;
+        size--;
+
+        if (listHasOneItem()) {
+            clearList();
+            return removedItem;
+        }
+        var previous = getPrevious(last);
+        last = previous;
+        previous.next = null;
+        return removedItem;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public String print() {
+        StringBuilder strRep = new StringBuilder("[");
+        if (isEmpty()) {
+            return strRep + "]";
+        }
+        var pointer = first;
+        if (pointer.next == null) {
+            return strRep.toString() + pointer.value + "]";
+        }
+        while (pointer.next != null) {
+            strRep.append(pointer.value).append(",");
+            pointer = pointer.next;
+        }
+        return strRep + (pointer.value + "]");
+    }
+
     public int get(int index) {
-        if (index < 0 || index >= size)
+        if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
+        }
 
         var pointer = first;
         for (int i = 0; i <= index; i++) {
@@ -38,99 +129,25 @@ public class LinkedList {
         return -1;
     }
 
-    public String print() {
-        String strRep = "[";
-        if (first == null)
-            return strRep + "]";
-        var pointer = first;
-        if (pointer.next == null)
-            return strRep + pointer.value + "]";
-        while (pointer.next != null) {
-            strRep += pointer.value + ",";
-            pointer = pointer.next;
-        }
-        return strRep + (pointer.value + "]");
+    private void clearList() {
+        first = last = null;
     }
 
-    public int getSize() {
-        return size;
+    private boolean listHasOneItem() {
+        return first.next == null;
     }
 
-    public void addLast(int value) {
-        var node = new Node();
-        node.value = value;
-
-        if (first == null) {
-            first = last = node;
-        } else {
-            last.next = node;
-            last = node;
+    private Node getPrevious(Node node) {
+        Node current = first;
+        while (current != null) {
+            if (current.next == node)
+                return current;
+            current = current.next;
         }
-        size++;
+        return null;
     }
 
-    public int deleteFirst() {
-        if (first == null)
-            throw new NoSuchElementException("LinkedList is empty");
-        int removedItem = first.value;
-        if (first.next == null)
-            first = last = null;
-        else
-            first = first.next;
-        size--;
-        return removedItem;
-    }
-
-    public int deleteLast() {
-        if (last == null)
-            throw new NoSuchElementException("LinkedList isEmpty");
-
-        int removedItem = last.value;
-        size--;
-
-        if (first.next == null) {
-            first = last = null;
-            return removedItem;
-        }
-        Node tmp = first;
-        while (true) {
-            if (tmp.next.next == null) {
-                last = tmp;
-                last.next = null;
-                return removedItem;
-            }
-            tmp = tmp.next;
-        }
-    }
-
-    public boolean contains(int item) {
-        if (first != null) {
-            Node tmp = first;
-            while (tmp.next != null) {
-                if (tmp.value == item)
-                    return true;
-                tmp = tmp.next;
-            }
-            if (tmp.value == item)
-                return true;
-        }
-        return false;
-    }
-
-    public int indexOf(int item) {
-        int count = 0;
-        if (first != null) {
-            Node tmp = first;
-            while (tmp.next != null) {
-                if (tmp.value == item)
-                    return count;
-                count++;
-                tmp = tmp.next;
-            }
-            if (tmp.value == item)
-                return count;
-        }
-
-        return -1;
+    private boolean isEmpty() {
+        return first == null;
     }
 }

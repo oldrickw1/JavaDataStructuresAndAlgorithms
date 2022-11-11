@@ -7,7 +7,9 @@
     <list default="true" id="973bbf9e-294c-44f4-8b54-1979d81e16d8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DataStructures/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataStructures/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LinkedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LinkedListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataStructures/LinkedList$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataStructures/LinkedList$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataStructures/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataStructures/LinkedList.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,15 +63,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.LinkedListTest">
-    <configuration name="ArrayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dataStructuresAndAlgorithms" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ArrayTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LinkedListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dataStructuresAndAlgorithms" />
       <option name="PACKAGE_NAME" value="" />
@@ -79,11 +72,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinkedListTest.addSeveralToEmptyLinkedList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LinkedListTest.checkIfLinkedListWithMultElemsContains" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dataStructuresAndAlgorithms" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="LinkedListTest" />
-      <option name="METHOD_NAME" value="addSeveralToEmptyLinkedList" />
+      <option name="METHOD_NAME" value="checkIfLinkedListWithMultElemsContains" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -94,6 +87,16 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="LinkedListTest" />
       <option name="METHOD_NAME" value="indexOfLinkedListThatDoesContainElem" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinkedListTest.removeFirstItemFromLinkedListWithOneItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dataStructuresAndAlgorithms" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LinkedListTest" />
+      <option name="METHOD_NAME" value="removeFirstItemFromLinkedListWithOneItem" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -112,10 +115,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.LinkedListTest" />
+        <item itemvalue="JUnit.LinkedListTest.removeFirstItemFromLinkedListWithOneItem" />
+        <item itemvalue="JUnit.LinkedListTest.checkIfLinkedListWithMultElemsContains" />
         <item itemvalue="JUnit.LinkedListTest.indexOfLinkedListThatDoesContainElem" />
         <item itemvalue="JUnit.LinkedListTest.removeLastItemFromLinkedListWithItems" />
-        <item itemvalue="JUnit.LinkedListTest.addSeveralToEmptyLinkedList" />
-        <item itemvalue="JUnit.ArrayTest" />
       </list>
     </recent_temporary>
   </component>
@@ -148,11 +151,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/ArrayTest.java</url>
           <line>344</line>
           <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/LinkedListTest.java</url>
-          <line>244</line>
-          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
