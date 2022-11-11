@@ -21,14 +21,14 @@ public class LinkedListTest {
     @Test
     @DisplayName("Prints an empty Linked List")
     void printsEmptyLinkedList() {
-        assertEquals("[]", underTest.print());
+        assertEquals("[]", underTest.toString());
     }
 
     @Test
     @DisplayName("Prints a Linked List with 1 item")
     void printsLinkedListWithOneItem() {
         underTest.addFirst(1);
-        assertEquals("[1]", underTest.print());
+        assertEquals("[1]", underTest.toString());
     }
 
     @Test
@@ -37,7 +37,7 @@ public class LinkedListTest {
         underTest.addFirst(1);
         underTest.addFirst(2);
         underTest.addFirst(3);
-        assertEquals("[3,2,1]", underTest.print());
+        assertEquals("[3,2,1]", underTest.toString());
     }
 
     // Testing addFirst
@@ -46,7 +46,7 @@ public class LinkedListTest {
     void addToEmptyLinkedList() {
         underTest.addFirst(5);
         assertEquals(1, underTest.getSize());
-        assertEquals("[5]", underTest.print());
+        assertEquals("[5]", underTest.toString());
         assertEquals(5, underTest.get(0));
     }
 
@@ -57,7 +57,7 @@ public class LinkedListTest {
         underTest.addFirst(6);
         underTest.addFirst(7);
         assertEquals(3, underTest.getSize());
-        assertEquals("[7,6,5]", underTest.print());
+        assertEquals("[7,6,5]", underTest.toString());
         assertEquals(7, underTest.get(0));
     }
 
@@ -92,7 +92,7 @@ public class LinkedListTest {
     void addLastToEmptyLinkedList() {
         underTest.addLast(4);
         assertEquals(1, underTest.getSize());
-        assertEquals("[4]", underTest.print());
+        assertEquals("[4]", underTest.toString());
         assertEquals(4, underTest.get(0));
     }
 
@@ -102,7 +102,7 @@ public class LinkedListTest {
         underTest.addFirst(4);
         underTest.addLast(5);
         assertEquals(2, underTest.getSize());
-        assertEquals("[4,5]", underTest.print());
+        assertEquals("[4,5]", underTest.toString());
         assertEquals(4, underTest.get(0));
         assertEquals(5, underTest.get(1));
     }
@@ -115,7 +115,7 @@ public class LinkedListTest {
         underTest.addLast(7);
         assertEquals(7, underTest.get(2));
         assertEquals(3, underTest.get(0));
-        assertEquals("[3,5,7]", underTest.print());
+        assertEquals("[3,5,7]", underTest.toString());
         assertEquals(3, underTest.getSize());
     }
 
@@ -139,7 +139,7 @@ public class LinkedListTest {
         assertEquals(2, underTest.get(0));
         assertEquals(3, underTest.get(1));
         assertEquals(2, underTest.getSize());
-        assertEquals("[2,3]", underTest.print());
+        assertEquals("[2,3]", underTest.toString());
     }
 
     @Test
@@ -149,7 +149,7 @@ public class LinkedListTest {
         int removedItem = underTest.deleteFirst();
         assertEquals(1, removedItem);
         assertEquals(0, underTest.getSize());
-        assertEquals("[]", underTest.print());
+        assertEquals("[]", underTest.toString());
     }
 
     // Testing deleteLast method
@@ -172,7 +172,7 @@ public class LinkedListTest {
         assertEquals(1, underTest.get(0));
         assertEquals(2, underTest.get(1));
         assertEquals(2, underTest.getSize());
-        assertEquals("[1,2]", underTest.print());
+        assertEquals("[1,2]", underTest.toString());
     }
 
     @Test
@@ -182,7 +182,7 @@ public class LinkedListTest {
         int removedItem = underTest.deleteLast();
         assertEquals(1, removedItem);
         assertEquals(0, underTest.getSize());
-        assertEquals("[]", underTest.print());
+        assertEquals("[]", underTest.toString());
     }
     // Testing contains method
     @Test

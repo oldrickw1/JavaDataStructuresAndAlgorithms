@@ -94,10 +94,12 @@ public class LinkedList {
     }
 
     public int getSize() {
+        /** returns the size of the Linked List */
         return size;
     }
 
-    public String print() {
+    @Override
+    public String toString() {
         StringBuilder strRep = new StringBuilder("[");
         if (isEmpty()) {
             return strRep + "]";
