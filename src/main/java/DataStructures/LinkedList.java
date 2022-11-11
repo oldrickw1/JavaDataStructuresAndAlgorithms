@@ -7,7 +7,7 @@ public class LinkedList {
     private int size = 0;
     private Node first, last;
 
-    private class Node {
+    protected class Node {
         private int value;
         private Node next;
 
@@ -93,8 +93,19 @@ public class LinkedList {
         return removedItem;
     }
 
+    public int[] toArray() {
+        int[] arr = new int[size];
+        var current = first;
+        var index = 0;
+        while (current != null) {
+            arr[index++] = current.value;
+            current = current.next;
+        }
+        return arr;
+    }
+
+    /** returns the size of the linked list */
     public int getSize() {
-        /** returns the size of the Linked List */
         return size;
     }
 

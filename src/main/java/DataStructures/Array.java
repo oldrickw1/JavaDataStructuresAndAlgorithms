@@ -73,10 +73,15 @@ public class Array {
     }
 
     public void reverse() {
-        var newItems = new int[count];
-        for (int i = 0; i < count; i++)
-            newItems[count - i - 1] = items[i];
-        items = newItems;
+        if (count == 0) {
+            return;
+        }
+        for (int left = 0, right = count - 1; left < (count / 2); left++, right--) {
+            int newLeft = items[right];
+            int newRight = items[left];
+            items[left] = newLeft;
+            items[right] = newRight;
+        }
     }
 
     public void insertAt(int item, int index) throws IndexOutOfBoundsException {
