@@ -253,4 +253,50 @@ public class LinkedListTest {
         underTest.addFirst(3);
         assertEquals(0,underTest.indexOf(3));
     }
+
+    // Testing getKthFromLast method
+    @Test
+    @DisplayName("Returns the value of the specified node in a Linked List of size 1")
+    void getKthFromLastInSizeOf1() {
+        underTest.addFirst(1);
+        int value = -1;
+        try {
+            value = underTest.kthFromLast(1);
+        } catch (Exception e)
+        {};
+        assertEquals(value, 1);
+    }
+
+    @Test
+    @DisplayName("Returns value of specified node in LL of size 3")
+    void getKthFromLastInSizeOf3() {
+        underTest.addFirst(3);
+        underTest.addFirst(2);
+        underTest.addFirst(1);
+        int value1 = -1;
+        int value2 = -1;
+        int value3 = -1;
+        try {
+            value1 = underTest.kthFromLast(1);
+            value2 = underTest.kthFromLast(2);
+            value3 = underTest.kthFromLast(3);
+        } catch (Exception e)
+        {};
+        assertEquals(value1, 3);
+        assertEquals(value2, 2);
+        assertEquals(value3, 1);
+    }
+
+    @Test
+    @DisplayName("Raises error when K is illegal")
+    void getIllegalKthFromLast() {
+        underTest.addFirst(1);
+        assertThrows(Exception.class, () -> {
+            underTest.kthFromLast(5);
+        });
+        assertThrows(Exception.class, () -> {
+            underTest.kthFromLast(-1);
+        });
+    }
+
 }

@@ -150,7 +150,7 @@ public class LinkedList {
 
     private Node getPrevious(Node node) {
         Node current = first;
-        while (current != null) {
+        while (current != null || current != node) {
             if (current.next == node)
                 return current;
             current = current.next;
@@ -174,5 +174,24 @@ public class LinkedList {
 
         first.next = null;
         first = lastElementTracer;
+    }
+
+    public int kthFromLast(int k) throws Exception{
+        int index = size - k;
+        if (index < 0 || index >= size) {
+            throw new Exception("error");
+        }
+        var current = first;
+        int count = 0;
+        try {
+            while (count != index) {
+                current = current.next;
+                count++;
+            }
+            return current.value;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return -1;
     }
 }
