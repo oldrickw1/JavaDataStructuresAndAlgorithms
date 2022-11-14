@@ -161,4 +161,18 @@ public class LinkedList {
     private boolean isEmpty() {
         return first == null;
     }
+
+    public void reverse() {
+        var lastElementTracer = last;
+        var prev = getPrevious(last);
+
+        while (prev != null) {
+            last.next = prev;
+            last = prev;
+            prev = getPrevious(last);
+        }
+
+        first.next = null;
+        first = lastElementTracer;
+    }
 }
