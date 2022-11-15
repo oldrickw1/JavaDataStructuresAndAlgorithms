@@ -7,7 +7,12 @@
     <list default="true" id="973bbf9e-294c-44f4-8b54-1979d81e16d8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DataStructures/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataStructures/LinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/LinkedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LinkedListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataStructures/LinkedList$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataStructures/LinkedList$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataStructures/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataStructures/LinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/LinkedListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/LinkedListTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,10 +74,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArrayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LinkedListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dataStructuresAndAlgorithms" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ArrayTest" />
+      <option name="MAIN_CLASS_NAME" value="LinkedListTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -88,16 +93,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinkedListTest.getKthFromLastInSizeOf1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dataStructuresAndAlgorithms" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LinkedListTest" />
-      <option name="METHOD_NAME" value="getKthFromLastInSizeOf1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LinkedListTest.getKthFromLastInSizeOf3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dataStructuresAndAlgorithms" />
       <option name="PACKAGE_NAME" value="" />
@@ -108,13 +103,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LinkedListTest.kthFromLastOnEmptyLL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dataStructuresAndAlgorithms" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LinkedListTest" />
+      <option name="METHOD_NAME" value="kthFromLastOnEmptyLL" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.LinkedListTest" />
+        <item itemvalue="JUnit.LinkedListTest.kthFromLastOnEmptyLL" />
         <item itemvalue="JUnit.LinkedListTest.getIllegalKthFromLast" />
         <item itemvalue="JUnit.LinkedListTest.getKthFromLastInSizeOf3" />
-        <item itemvalue="JUnit.LinkedListTest.getKthFromLastInSizeOf1" />
-        <item itemvalue="JUnit.ArrayTest" />
       </list>
     </recent_temporary>
   </component>
@@ -152,11 +157,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/ArrayTest.java</url>
           <line>313</line>
           <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/DataStructures/LinkedList.java</url>
-          <line>165</line>
-          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

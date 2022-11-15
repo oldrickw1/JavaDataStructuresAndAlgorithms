@@ -288,6 +288,14 @@ public class LinkedListTest {
     }
 
     @Test
+    @DisplayName("KthFromLast on empty LL")
+    void kthFromLastOnEmptyLL() {
+        assertThrows(Exception.class, () -> {
+            underTest.kthFromLast(0);
+        });
+    }
+
+    @Test
     @DisplayName("Raises error when K is illegal")
     void getIllegalKthFromLast() {
         underTest.addFirst(1);

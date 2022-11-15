@@ -1,5 +1,6 @@
 package DataStructures;
 
+import javax.swing.plaf.IconUIResource;
 import java.util.NoSuchElementException;
 
 public class LinkedList {
@@ -163,35 +164,59 @@ public class LinkedList {
     }
 
     public void reverse() {
-        var lastElementTracer = last;
-        var prev = getPrevious(last);
-
-        while (prev != null) {
-            last.next = prev;
-            last = prev;
-            prev = getPrevious(last);
+        if (size <= 1) {
+            return;
         }
 
+        var current = first.next;
+        var previous = first;
+        Node next;
+
+        while (current != null) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
         first.next = null;
-        first = lastElementTracer;
+        last = first;
+        first = previous;
     }
 
-    public int kthFromLast(int k) throws Exception{
+    public int kthFromLast(int k) throws Exception {
         int index = size - k;
-        if (index < 0 || index >= size) {
-            throw new Exception("error");
+        return get(index);
+    }
+
+    public void printMiddle() {
+        if (first == null)
+            throw new IllegalStateException("List is empty");
+
+        var a = first;
+        var b = first;
+        while (b != last && b.next != last) {
+            a = a.next;
+            b = b.next.next;
         }
-        var current = first;
-        int count = 0;
-        try {
-            while (count != index) {
-                current = current.next;
-                count++;
-            }
-            return current.value;
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        System.out.println(b == last ? a.value : a.value + ", " + b.value);
+    }
+
+    public boolean hasLoop() {
+        if (first == null || first.next == null)
+            return false;
+        var a = first;
+        var b = first.next;
+
+        while (b != null && b.next != null) {
+            if (a == b)
+                return true;
+            b = b.next.next;
+            a = a.next;
         }
-        return -1;
+        return false;
+    }
+
+    public void createWithLoop() {
+        last.next = first;
     }
 }
