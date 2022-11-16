@@ -1,14 +1,18 @@
-import DataStructures.LinkedList;
+import DataStructures.BalancedChecker;
+import DataStructures.Stack;
+
+import javax.xml.stream.events.Characters;
+import java.util.HashMap;
+import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
-        var list = new LinkedList();
-        list.addFirst(5);
-        list.addFirst(4);
-        list.addFirst(3);
-        list.addFirst(2);
-        list.addFirst(1);
-        list.createWithLoop();
-        System.out.println(list.hasLoop());
+        var stack = new Stack(10);
+        stack.push(1);
+        stack.push(2);
+        System.out.print(stack);
+
     }
 }
+
+
