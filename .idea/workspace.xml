@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="973bbf9e-294c-44f4-8b54-1979d81e16d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DataStructures/BalancedChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DataStructures/Stack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DataStructures/TwoStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DataStructures/ArrayQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DataStructures/HashTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DataStructures/MinStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DataStructures/PriorityQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DataStructures/QueueReverser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DataStructures/StackQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataStructures/TwoStack.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DataStructures/Stack.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DataStructures/Stack.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,6 +161,20 @@
           <line>313</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/DataStructures/MinStack.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="21" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

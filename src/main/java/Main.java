@@ -1,17 +1,17 @@
-import DataStructures.BalancedChecker;
-import DataStructures.Stack;
+import DataStructures.*;
 
-import javax.xml.stream.events.Characters;
+import java.util.ArrayDeque;
 import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.HashSet;
 
 public class Main {
     public static void main(String[] args) {
-        var stack = new Stack(10);
-        stack.push(1);
-        stack.push(2);
-        System.out.print(stack);
-
+        var hashtable = new HashTable(100);
+        hashtable.put(5, "Harry");
+        hashtable.put(102, "Ron");
+        System.out.println(hashtable.get(5));
+        hashtable.remove(5);
+        System.out.println(hashtable.get(5));
     }
 }
 
