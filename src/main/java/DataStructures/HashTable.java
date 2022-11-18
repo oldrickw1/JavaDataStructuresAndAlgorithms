@@ -3,7 +3,7 @@ package DataStructures;
 import java.util.LinkedList;
 
 public class HashTable {
-    private LinkedList<Entry>[] arr;
+    private LinkedList<Entry>[] entries;
 
     private class Entry {
         private int key;
@@ -16,52 +16,52 @@ public class HashTable {
     }
 
     public HashTable(int capacity) {
-        arr = new LinkedList[capacity];
+        entries = new LinkedList[capacity];
     }
 
-    public void put(int k, String v) {
-        int index = hash(k);
-        if (arr[index] == null) {
-            arr[index] = new LinkedList<Entry>();
-            arr[index].add(new Entry(k, v));
+    public void put(int key, String value) {
+        var entry = getEntry(key);
+        if (entry != null) {
+            entry.value = value;
+            return;
         }
-        else {
-            var iterator = arr[index].iterator();
-            while (iterator.hasNext()) {
-                var entry = iterator.next();
-                if (entry.key == k)
-                    entry.value = v;
+        getOrCreateBucket(key).add(new Entry(key, value));
+    }
+
+    public String get(int key) {
+        var entry = getEntry(key);
+        return entry == null ? null : entry.value;
+    }
+
+    public void remove(int key) {
+        var entry = getEntry(key);
+        if (entry != null)
+            getBucket(key).remove(entry);
+    }
+
+    private LinkedList<Entry> getBucket(int key) {
+        return entries[hash(key)];
+    }
+
+    private Entry getEntry(int key) {
+        var bucket= getBucket(key);
+        if (bucket != null)
+            for (var entry : bucket) {
+                if (entry.key == key)
+                    return entry;
             }
-        }
+        return null;
     }
 
-
-    public String get(int k) {
-        var ll = arr[hash(k)];
-        var iterator = ll.iterator();
-        while (iterator.hasNext()) {
-            var entry = iterator.next();
-            if (entry.key == k)
-                return entry.value;
-        }
-        return "NO SUCH KEY";
-    }
-
-    public void remove(int k) {
-        var ll = arr[hash(k)];
-        var iterator = ll.iterator();
-        int counter = 0;
-        while (iterator.hasNext()) {
-            var entry = iterator.next();
-            if (entry.key == k) {
-                break;
-            }
-            counter++;
-        }
-        ll.remove(counter);
+    private LinkedList<Entry> getOrCreateBucket(int key) {
+        var index = hash(key);
+        var bucket = entries[index];
+        if (bucket == null)
+            entries[index] = new LinkedList<>();
+        return entries[index];
     }
 
     public int hash(int i) {
-        return i % 100;
+        return i % entries.length;
     }
 }
