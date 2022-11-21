@@ -45,6 +45,14 @@ public class Tree {
         }
     }
 
+    public int min() {
+        var current = root;
+        while (current.leftChild != null) {
+            current = current.leftChild;
+        }
+        return current.value;
+    }
+
     public boolean find(int value) {
         Node current = root;
         while (current != null) {

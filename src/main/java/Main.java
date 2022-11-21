@@ -12,7 +12,7 @@ public class Main {
         tree.insert(6);
         tree.insert(3);
         tree.insert(8);
-        tree.breadthFirst();
+        System.out.println(tree.min());
 
     }
 }
